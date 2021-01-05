@@ -10,7 +10,7 @@ with io.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = '\n' + f.read()
 
 setup(name='ziproto',
-        version='1.0',
+        version='1.1',
         description='Protocol Buffer used to serialize and compress data',
         long_description=long_description,
         long_description_content_type='text/markdown',
