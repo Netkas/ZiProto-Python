@@ -7,7 +7,11 @@ def split_index(b, offset, count):
     return b[offset:end], end
 
 def split_array(b, fmt, count_len):
-    count = struct.decode(fmt, b[:count_len])[0]
+    try:
+        unpack = struct.decode
+    except AttributeError:
+        unpack = struct.unpack
+    count = unpack(fmt, b[:count_len])[0]
     return count, count_len
 
 HEAD_MAP = {
